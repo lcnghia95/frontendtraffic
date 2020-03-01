@@ -1,44 +1,43 @@
 import React, { Component,Fragment } from 'react'
 import { MDBDataTable, MDBBtn, MDBIcon, MDBModal, MDBModalHeader, MDBModalBody, MDBModalFooter, MDBContainer } from 'mdbreact'
-import  ProFileFormComponent from './ProFileFormComponent'
+import  ProfileCarFormComponent from './ProfileCarFormComponent'
 import callApi from '../apicall/apiCaller'
-import _ from 'lodash'
 
 const data1 = {
   columns: [
     {
-      label: 'Tên tài khoản',
-      field: 'username',
+      label: 'Biển số',
+      field: 'Plate',
       sort: 'asc',
       width: 270
     },
     {
-      label: 'Mật khẩu',
-      field: 'password',
+      label: 'Màu sắc',
+      field: 'color',
       sort: 'asc',
       width: 200
     },
     {
-      label: 'Tên',
+      label: 'Tên xe',
       field: 'name',
       sort: 'asc',
       width: 100
     },
     {
-      label: 'CMND',
-      field: 'CMND',
+      label: 'Hiệu',
+      field: 'label',
       sort: 'asc',
       width: 100
     },
     {
-      label: 'SDT',
-      field: 'SDT',
+      label: 'Số khung',
+      field: 'number',
       sort: 'asc',
       width: 100
     },
     {
-      label: 'Biển số',
-      field: 'Plate',
+      label: 'Tài khoản quản lý',
+      field: 'manaUsername',
       sort: 'asc',
       width: 150
     },
@@ -55,7 +54,7 @@ const data1 = {
 }
 
 
-class BodyMangerAccountAdminComponent extends Component {
+class BodyManagerCarAdminComponent extends Component {
 
   constructor(props) {
     super(props);
@@ -71,7 +70,7 @@ class BodyMangerAccountAdminComponent extends Component {
 
   onDelete = (value) =>{
   
-    callApi(`users/${value.username}`,'DELETE',{}).then(res=>{
+    callApi(`cars/${value.Plate}`,'DELETE',{}).then(res=>{
       let index = this.state.data.rows.findIndex((el)=>{
         return el._id === value._id
       })
@@ -111,14 +110,6 @@ class BodyMangerAccountAdminComponent extends Component {
     })
   }
 
-  onPlate = (Plate) =>{
-    let result = ''
-    result = Plate.map((value,index)=>{
-      return <li>{value}</li>
-    })
-
-    return result 
-  }
   
 
 
@@ -126,15 +117,14 @@ class BodyMangerAccountAdminComponent extends Component {
     let result = []
     result = dataContainer.map((value, index) => {
   
-      return value.rule ===1 ?  Object.assign({}, { 
-        ...value,
-      Plate:<ul>{this.onPlate(value.Plate)}</ul>
+      return Object.assign({}, { 
+        ...value
       }, {
         btn:  <Fragment>
                 <MDBIcon onClick={()=>this.onClick(value)} icon="edit" className="mr-2" />
                 <MDBIcon onClick={()=>this.stateValueDelete(value)} icon="trash-alt" className="mr-2" />
               </Fragment>
-      }) : ''
+      }) 
 
     })
 
@@ -142,9 +132,9 @@ class BodyMangerAccountAdminComponent extends Component {
   }
 
   componentWillMount() {
-    callApi('users', 'GET', {})
+    callApi('cars', 'GET', {})
       .then(res => {
-       
+       console.log(res.data)
         this.setState({
           data: {
             columns: [...data1.columns],
@@ -194,10 +184,10 @@ class BodyMangerAccountAdminComponent extends Component {
          
       <MDBModal  isOpen={true} toggle={this.toggle} fullHeight position="bottom" size="lg">
         <MDBModalHeader toggle={this.toggle}>
-         <h2> Thông tin tài khoản</h2>
+         <h2> Thông tin phương tiện</h2>
         </MDBModalHeader>
         <MDBModalBody className="text-center">
-          <ProFileFormComponent 
+          <ProfileCarFormComponent 
             value={this.state.valueToggle}
             getDataFromChild={this.getDataFromChild}
           />
@@ -222,7 +212,7 @@ class BodyMangerAccountAdminComponent extends Component {
         </MDBModalBody>
         <MDBModalFooter>
           <MDBBtn color="danger" onClick={()=>this.onDelete(this.state.valueDelete)}>Xác nhận</MDBBtn>
-          <MDBBtn color="secondary" onClick={this.toggle1}>Close</MDBBtn>
+          <MDBBtn color="secondary" onClick={this.toggle1}>Đóng</MDBBtn>
         </MDBModalFooter>
       </MDBModal>
     </MDBContainer>
@@ -265,7 +255,7 @@ class BodyMangerAccountAdminComponent extends Component {
   }
 }
 
-export default BodyMangerAccountAdminComponent;
+export default BodyManagerCarAdminComponent;
 
 
 
