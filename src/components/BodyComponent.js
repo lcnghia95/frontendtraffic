@@ -189,14 +189,14 @@ class BodyComponent extends Component {
             {/* Approach */}
             <div className="card shadow mb-4">
               <div className="card-header py-3">
-              <a href="https://www.baogiaothong.vn/ben-tre-tag" target="_blank"  rel="oopener noreferrer" className="m-0 font-weight-bold text-primary">Tin tức giao thông Bến Tre</a>
+              <a href="http://giaothonghocduong.com.vn/" target="_blank"  rel="oopener noreferrer" className="m-0 font-weight-bold text-primary">Thông tin cuộc thi giao thông học đường</a>
               </div>
               <div className="card-body">
-                <a href="https://www.baogiaothong.vn/ben-tre-tag" target="_blank"  rel="oopener noreferrer" className="m-0 font-weight-bold text-primary">
-                  <img  target="_blank"  rel="oopener noreferrer" className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: '50rem' }} src="https://cdn.24h.com.vn/upload/2-2019/images/2019-04-23/Phan-cam-khi-doan-xe-tuyen-truyen-an-toan-giao-thong-lai-vuot-den-do-vuot-1556009264-415-width540height304.jpg" alt="" />
+                <a href="http://giaothonghocduong.com.vn/" target="_blank"  rel="oopener noreferrer" className="m-0 font-weight-bold text-primary">
+                  <img  target="_blank"  rel="oopener noreferrer" className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: '50rem' }} src="/giaothonghocduong.png" alt="" />
                 </a>
-                <p>Tại tỉnh Bến Tre, từ đầu năm 2019 đến nay, tình hình trật tự ATGT có sự chuyển biến tích cực, TNGT được kéo giảm trên cả 3 tiêu chí. So với cùng kỳ năm 2018, số vụ TNGT giảm 18,3%, số người chết giảm 29,8% và số người bị thương giảm 13,7%.</p>
-                <a href="https://www.baogiaothong.vn/ben-tre-tag"  target="_blank"  rel="oopener noreferrer" ><u>Nhấp để đi đến trang →</u></a>
+                {/* <p>Tại tỉnh Bến Tre, từ đầu năm 2019 đến nay, tình hình trật tự ATGT có sự chuyển biến tích cực, TNGT được kéo giảm trên cả 3 tiêu chí. So với cùng kỳ năm 2018, số vụ TNGT giảm 18,3%, số người chết giảm 29,8% và số người bị thương giảm 13,7%.</p> */}
+                <a href="http://giaothonghocduong.com.vn/"  target="_blank"  rel="oopener noreferrer" ><u>Nhấp để đi đến trang →</u></a>
               </div>
             </div>
           </div>
