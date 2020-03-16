@@ -9,43 +9,43 @@ const data1 = {
     {
       label: 'Biển số',
       field: 'Plate',
-      sort: 'asc',
+      // sort: 'asc',
       width: 150
     },
     {
       label: 'Ngày',
       field: 'date',
-      sort: 'asc',
+      sort: 'desc',
       width: 270
     },
     {
       label: 'Thời gian',
       field: 'time',
-      sort: 'asc',
+      sort: 'desc',
       width: 200
     },
     {
       label: 'Lỗi vi phạm',
       field: 'type',
-      sort: 'asc',
+      // sort: 'asc',
       width: 100
     },
     {
       label: 'Người vi phạm',
       field: 'name',
-      sort: 'asc',
+      // sort: 'asc',
       width: 150
     },
     {
       label: 'CMND',
       field: 'CMND',
-      sort: 'asc',
+      // sort: 'asc',
       width: 100
     },
     {
       label: 'SDT',
       field: 'SDT',
-      sort: 'asc',
+      // sort: 'asc',
       width: 100
     },
     {

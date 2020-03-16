@@ -231,7 +231,7 @@ class BodyManagerCarAdminComponent extends Component {
         {/* DataTales Example */}
         <div className="card shadow mb-4">
           <div className="card-header py-3">
-            <h6 className="m-0 font-weight-bold text-primary">Danh sách tài khoản</h6>
+            <h6 className="m-0 font-weight-bold text-primary">Danh sách phương tiện</h6>
             <MDBBtn className="float-right" onClick={() => this.onClick()} rounded color="primary" > <MDBIcon icon="plus" className="mr-2" /> Thêm mới</MDBBtn>
           </div>
           <div className="card-body">
